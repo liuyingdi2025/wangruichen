@@ -7,17 +7,19 @@ class Solution:
         counter = 0
         index = 0
         while index < len(periods):
-            print(periods, index, counter, result)
+            # print(periods, index, counter, result)
             if periods[index] <= day:
                 counter += 1
                 if counter == neighbors:
                     result += 1
                     counter = 0
+            else:
+                counter = 0
             index += 1
         return result
 
     def binary_search(self, periods, target, left, right, neighbors):
-        print(periods, left, right)
+        # print(periods, left, right)
         if left == right:
             return left
         mid = (left + right) // 2
@@ -36,10 +38,10 @@ class Solution:
         return self.binary_search(periods, flowers, min_value, max_value, neighbors)
 
 
-# print(Solution().minDays([1, 10, 3, 10, 2], 3, 1))  # 3
-# print(Solution().minDays([1, 10, 3, 10, 2], 3, 2))  # -1
-# print(Solution().minDays([7, 7, 7, 7, 12, 7, 7], 2, 3))  # 12
-# print(Solution().minDays([1000000000, 1000000000], 1, 1))  # 1000000000
-# print(Solution().minDays([1, 10, 2, 9, 3, 8, 4, 7, 5, 6], 4, 2))  # 9
+print(Solution().minDays([1, 10, 3, 10, 2], 3, 1))  # 3
+print(Solution().minDays([1, 10, 3, 10, 2], 3, 2))  # -1
+print(Solution().minDays([7, 7, 7, 7, 12, 7, 7], 2, 3))  # 12
+print(Solution().minDays([1000000000, 1000000000], 1, 1))  # 1000000000
+print(Solution().minDays([1, 10, 2, 9, 3, 8, 4, 7, 5, 6], 4, 2))  # 9
 
-print(Solution().calc_flowers(periods=[1, 10, 3, 10, 2], neighbors=1, day=3))
+# print(Solution().calc_flowers(periods=[7, 7, 7, 7, 12, 7, 7], neighbors=3, day=7))
