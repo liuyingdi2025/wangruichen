@@ -1,4 +1,4 @@
-from code_singly_linked_list import LinkedList
+from code_01_singly_linked_list import LinkedList
 
 
 class Stack:
