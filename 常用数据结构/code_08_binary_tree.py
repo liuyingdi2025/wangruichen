@@ -55,47 +55,47 @@ class BinaryTree(TreeNode):
                 nodes.append(node.right)
         return orders
 
-    def pre_order(self):
+    def preorder(self):
         orders = []
 
-        def calc_pre_order(node):
+        def calc_preorder(node):
             if node is not None:
                 orders.append(node.val)
-                calc_pre_order(node.left)
-                calc_pre_order(node.right)
+                calc_preorder(node.left)
+                calc_preorder(node.right)
 
-        calc_pre_order(self.root)
+        calc_preorder(self.root)
         return orders
 
-    def in_order(self):
+    def inorder(self):
         orders = []
 
-        def calc_in_order(node):
+        def calc_inorder(node):
             if node is not None:
-                calc_in_order(node.left)
+                calc_inorder(node.left)
                 orders.append(node.val)
-                calc_in_order(node.right)
+                calc_inorder(node.right)
 
-        calc_in_order(self.root)
+        calc_inorder(self.root)
         return orders
 
-    def post_order(self):
+    def postorder(self):
         orders = []
 
-        def calc_post_order(node):
+        def calc_postorder(node):
             if node is not None:
-                calc_post_order(node.left)
-                calc_post_order(node.right)
+                calc_postorder(node.left)
+                calc_postorder(node.right)
                 orders.append(node.val)
 
-        calc_post_order(self.root)
+        calc_postorder(self.root)
         return orders
 
     def bfs(self):
         return self.level_order()
 
     def dfs(self):
-        return self.pre_order()
+        return self.preorder()
 
     def to_list(self):
         if self.root is None:
