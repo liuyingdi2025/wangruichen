@@ -15,10 +15,12 @@ class Solution:
     def inorder(self, node):
         if node is not None:
             self.inorder(node.left)
+            # do something
             self.orders.append(node.val)
+            # done
             self.inorder(node.right)
 
-    def getMinimumDifference(self, root: Optional[TreeNode]) -> int:
+    def minDiffInBST(self, root: Optional[TreeNode]) -> int:
         if root is None:
             return 0
         self.orders = []

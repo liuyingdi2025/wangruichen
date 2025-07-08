@@ -109,10 +109,10 @@ class BinaryTree(TreeNode):
                 nodes[index + 1] = parent.right
         return [_.val if _ is not None else None for _ in nodes]
 
-    def display(self, count=8):
+    def display(self, space=8):
         def recursive_display(node, level, prefix='Root'):
             if node is not None:
-                print(f'|{'-' * count * level} {prefix}:[{node.val}]')
+                print(f'|{'-' * space * level} {prefix}:[{node.val}]')
                 recursive_display(node.left, level + 1, 'L')
                 recursive_display(node.right, level + 1, 'R')
 
